@@ -1,0 +1,9 @@
+@media screen and (max-width : 1200px){
+    .txt {
+        font-size : 1rem;
+    }
+
+    .intro2 {
+        left : 70%;
+    }
+}
