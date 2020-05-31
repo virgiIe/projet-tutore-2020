@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat</title>
+    <style>
+        @font-face{
+            font-family: 'Avenir Next';
+            src: url(polices/Carrois-Gothic-Regular/carroisgothic/CarroisGothic-Regular.ttf);
+        }
+        body{
+            margin: 0;
+        }
+        .resultat{
+            font-family: 'DIN', sans-serif; 
+            background-image: url(images/fondresultat.jpg);
+            background-position: center ;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+        }
+        .backresultat{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 50px;
+            padding-top: 3%;
+            margin-top: 0;
+            color: black;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .titreresultat{
+            font-size: 60px;
+            padding-left: 10%;
+            margin-top: -20px;
+        }
+        .ecole{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 200px;
+            margin-top: -20px;
+            font-size: 40px;
+            color: white;
+        }
+        .bordel{
+            display: flex;
+            margin-top: -20px;
+        }
+        .laformation{
+            color: white;
+            margin-left: 5%;
+            height: 30px;
+            border-bottom: 2px solid white;
+        }
+        .blockblanc{
+            background-color: rgb(255, 255, 255);
+            border-radius: 40px;
+            width: 550px;
+            padding: 20px 0px;
+            padding-left: 40px;
+            font-size: 25px;
+            max-height: 350px;
+            margin-left: 5%;
+        }
+        .type{
+            display: flex;
+            height: 50px;
+        }
+        .type1{
+            color: black;
+        }
+        .type2{
+            color: #638389;
+        }
+        .specialite{
+            display: flex;
+            height: 50px;
+        }
+        .specialite1{
+            color: black;
+        }
+        .specialite2{
+            color: #638389;
+        }
+        .matieres{
+            color: black;
+        }
+        .listematieres{
+            color: #638389;
+            display: flex;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .colonne1{
+            padding-left: 20px;
+        }
+        .colonne2{
+            padding-left: 80px;
+        }
+        .lien{
+            display: flex;
+            align-items: center;
+        }
+        .couleur{
+            text-decoration: none;
+            color: black;
+        }
+        .jaune{
+            font-size: 25px;
+        }
+        .and{
+            color: #FFE695;
+            text-align: center;
+        }
+        .blockjaune{
+            background-color: #FFE695;
+            border-radius: 30px;
+            width: 380px;
+            padding: 20px 0px;
+            padding-left: 40px;
+            max-height: 350px;
+            margin-left: 10%;
+        }
+        .metier{
+            width: 200px;
+        }
+        .°{
+            line-height: 55px;
+            font-size: 20px;
+        }
+        .bas{
+            display: flex;
+        }
+        .localisation{
+            display: flex;
+            align-items: center;
+            padding-left: 15%;
+        }
+        .loc{
+            width: 10%;
+            padding-left: 10px;
+        }
+        .fiche{
+            display: flex;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+        }
+        .fleche{
+            width: 10%;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resultat">
+        <a href="" class="backresultat">< Retour en arrière</a>
+        <h1 class="titreresultat">Bachelor Développement Web</h1>
+        <h1 class="ecole">HETIC</h1>
+
+        <div class="bordel">
+            <h2 class="laformation">La formation</h2>
+            <div class="noflex">
+                <div class="blockblanc">
+                    <div class="type">
+                        <p class="type1">Type de formation : </p>
+                        <p class="type2">Initial ou alternance</p>
+                    </div>
+                    <div class="specialite">
+                        <p class="specialite1">Spécialité : </p>
+                        <p class="specialite2">Informatique</p>
+                    </div>
+                    <p class="matieres">Les matières principales :</p>
+                        <ul class="listematieres">
+                            <div class="colonne1">
+                                <li>Matière 1</li>
+                                <li>Matière 2</li>
+                                <li>Matière 3</li>
+                            </div>  
+                            <div class="colonne2">
+                                <li>Matière 4</li>
+                                <li>Matière 5</li>
+                            </div>  
+                        </ul>
+                </div>
+                <div class="lien">
+                    <p>Plus de détails :</p>
+                    <a class="couleur" href=""> https://www.hetic.net/formations/bachelor-web</a>
+                </div>
+            </div>
+            <div class="jaune">
+                <p class="and">Et après ?</p>
+                <div class="blockjaune">
+                    <p class="metier">Insertion professionnelle :</p>
+                    <ul class="°">
+                        <li>Métier n°1</li>
+                        <li>Métier n°2</li>
+                        <li>Métier n°3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="bas">
+            <div class="localisation">
+                <img class="loc" src="images/localisation.png" alt="">
+                <p>Hetic, Montreuil</p>
+            </div>
+            <a href="" class="fiche">
+                <img class="fleche" src="images/fleche.png" alt="">
+                <p>Obtenir la fiche par mail</p>
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
