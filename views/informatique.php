@@ -5,16 +5,16 @@
                 <h2 class="diplome-titre">Informatique</h2>
         </div>
 
-        <?php if (isset($_GET['informatique3'])): ?>
-                <h3 class="bac-niveau info">BAC +3</h3>
+        <?php if (isset($_GET['informatiquebac3'])): ?>
+                <h3 class="bac-niveau diplome-info">BAC +3</h3>
             <div class="suite">
                 <a href="" class="btn-diplome info-1">Bachelors privés</a>
                 <a href="" class="btn-diplome info-2">Licences professionnelles</a>
             </div>
         <?php endif; ?>
 
-        <?php if (isset($_GET['informatique5'])): ?>
-                <h3 class="bac-niveau info">BAC +5</h3>
+        <?php if (isset($_GET['informatiquebac5'])): ?>
+                <h3 class="bac-niveau diplome-info">BAC +5</h3>
             <div class="suite">
                 <a href="" class="btn-diplome info-1">Mastères privés</a>
                 <a href="" class="btn-diplome info-2">Cycles d'ingénieurs</a>

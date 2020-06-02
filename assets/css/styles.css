@@ -16,6 +16,23 @@ body {
     max-width: 100%;
     width: 100%;
     font-family: 'DIN', sans-serif;
+    background-color: #9ecddd;
+
+    --eau-accueil: #9ecddd;
+    --eau-niveau-bac: #d0e1e7;
+    --eau-type: #A9CBD1;
+    --eau-specialite: #C1D5D0;
+    --eau-sciences: #c8dad6;
+    --eau-commarketing: #d1c5e6;
+    --eau-informatique: #a2bcb5;
+    --eau-esthetique: #ffede8;
+    --eau-video: #ffede8;
+
+    transition: background-color 0.5s ease;
+}
+
+a {
+    cursor: pointer;
 }
 
 
@@ -50,11 +67,8 @@ div {
 
 .accueil {
     height: 100vh;
-    background-image: url(../img/img-accueil/page-accueil.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-size: cover;
+    background-image: url(../img/img-accueil/page-accueil.png);
+    background-size: 100% 100%;
     position: relative;
 }
 
@@ -109,14 +123,11 @@ header a {
 /* Niveau Bac */
 .niveau {
     background-image: url(../img/fond-finaux/fond-bac.png);
-    background-color: #C6DEE5;
     position: relative;
-    background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .bulle-b {
-    /* border: solid red 2px; */
     background-color: #94B3B9;
     border-radius: 30px;
     width: 50%;
@@ -133,7 +144,6 @@ header a {
     font-weight: bold;
     font-size: 1.4rem;
     width: 85%;
-  /*   border: solid 2px orange; */
     line-height: 1.7rem;
 }
 
@@ -148,7 +158,6 @@ header a {
 }
 
 .bac {
-   /*  border: solid slateblue 2px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -166,7 +175,7 @@ header a {
 }
 
 
-.f-rouge {
+.f-rouge, .boy-v {
     height: 25%;
     position: absolute;
     bottom: 0;
@@ -178,12 +187,8 @@ header a {
 .type {
     height: 100vh;
     background-image: url(../img/fond-finaux/fond-type.png);
-    background-size: cover;
-    background-position: center;
-    background-color: #A9CBD1;
+    background-size: 100% 100%;
     position: relative;
-
-
 }
 
 
@@ -208,7 +213,6 @@ header a {
 
     position: relative;
     letter-spacing: 0.8px;
-    /*   border : solid pink 2px; */
 }
 
 
@@ -226,7 +230,6 @@ header a {
 }
 
 .option-f {
-    /* border: solid red 2px; */
     height: 10vh;
     display: flex;
     justify-content: space-around;
@@ -242,34 +245,21 @@ header a {
     background-color: #B5A8CB;
 }
 
-.boy-v {
-    width: 12%;
-    position: absolute;
-    bottom: 0;
-    left: 70%;
-
-
-}
-
 /* Spécialités */
 
 .specialite {
     height: 100vh;
     background-image: url(../img/fond-finaux/fond-spe.png);
-    background-position: center;
-    background-size: cover;
-    background-color: #C1D5D0;
+    background-size: 100% 100%;
     position: relative;
 }
 
 
 .specialite section>img {
     height: 70%;
-    /*  border : solid red 2px; */
 }
 
 .specialite .domaine>section {
-    /*   border : solid olivedrab 2px; */
     width: 15%;
     height: 90%;
     display: flex;
@@ -291,7 +281,6 @@ header a {
 }
 
 .domaine {
-    /* border : blue 2px solid; */
     width: 100%;
     height: 32%;
     display: flex;
@@ -339,6 +328,11 @@ header a {
 }
 
 .esthetique {
+    background-color: rgb(170, 113, 133);
+    box-shadow: #704656 -10px 15px 6px;
+}
+
+.video {
     background-color: #E0B1A7;
     box-shadow: #AA7468 -10px 15px 6px;
 }
@@ -356,19 +350,38 @@ header a {
 
 }
 
-/* Diplôme Informatique */
+/* Page diplômes */
 
 .diplome-background {
-    background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
     height: 100vh;
     margin: 0;
     position: relative;
 }
 
+.background-sciences {
+    background-image: url(../img/fond-finaux/fond-sciences.png);
+    /* background-color: #c8dbd7; */
+}
+
 .background-info {
     background-image: url(../img/fond-finaux/fond-info.png);
-    background-color: #98B4AC;
+    /* background-color: #98B4AC; */
+}
+
+.background-com {
+    background-image: url(../img/fond-finaux/fond-com.png);
+    /* background-color: #d1c5e5; */
+}
+
+.background-esthetique {
+    background-image: url(../img/fond-finaux/fond-esthetique.png);
+    /* background-color: #b2d1d7; */
+}
+
+.background-video {
+    background-image: url(../img/fond-finaux/fond-video.png);
+    /* background-color: #ffede8; */
 }
 
 .diplome-retour {
@@ -406,15 +419,31 @@ header a {
     align-items: center;
 }
 
-.info {
+.diplome-sciences {
+    color: #6d9085;
+}
+
+.diplome-info {
     color: #457D88;
 }
 
+.diplome-com {
+    color: #81759d;
+}
+
+.diplome-esthetique {
+    color: #c8dad6;
+}
+
+.diplome-video {
+    color: #e2ac9d;
+}
 
 .diplome-titre {
     font-size: 4rem;
     letter-spacing: 3px;
     margin-right: 10%;
+    text-align: center;
 }
 
 .bac-niveau {
@@ -445,6 +474,18 @@ header a {
     letter-spacing: 0.5px;
 }
 
+.sciences-1 {
+    background-color: #6d9085;
+}
+
+.sciences-2 {
+    background-color: #748d93;
+}
+
+.sciences-3 {
+    background-color: #9bb0aa;
+}
+
 .info-1 {
     background-color: #457D88;
 }
@@ -455,6 +496,42 @@ header a {
 
 .info-3 {
     background-color: #8AA8A0;
+}
+
+.com-1 {
+    background-color: #81759d;
+}
+
+.com-2 {
+    background-color: #968bb0;
+}
+
+.com-3 {
+    background-color: #b3a8cb;
+}
+
+.esthetique-1 {
+    background-color: #c8dad6;
+}
+
+.esthetique-2 {
+    background-color: #beebe1;
+}
+
+.esthetique-3 {
+    background-color: #b3cec8;
+}
+
+.video-1 {
+    background-color: #d59785;
+}
+
+.video-2 {
+    background-color: #eabbac;
+}
+
+.video-3 {
+    background-color: #f4d6ce;
 }
 
 

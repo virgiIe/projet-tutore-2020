@@ -7,6 +7,11 @@
     <title>Flowwi</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/fluide.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+
+
 </head>
 
 <body>
@@ -20,7 +25,7 @@
         </header>
         <img src="./assets/img/persos-histoire/perso-flowwi-8.png" alt="personnage" class="f-orange">
         <img src="./assets/img/persos-histoire/perso-flowwi-2.png" alt="personnage" class="g-violet">
-        <a href="#niveau-bac" class="start">démarrer</a>
+        <a href="#niveau-bac" class="start" id="start">démarrer</a>
 
         
         
@@ -38,8 +43,8 @@
                 <p>Quel niveau souhaites-tu obtenir à la fin de tes études ?</p>
                 </section>
                 <section class="bac">
-                    <a href="#" class="bac3">Bac +3</a>
-                    <a href="#" class="bac5">Bac +5</a>
+                    <a href="#type" class="bac3" id="bac3">Bac +3</a>
+                    <a href="#type" class="bac5" id="bac5">Bac +5</a>
                 </section>
 
                 <img src="./assets/img/persos-histoire/perso-flowwi-6.png" alt="personnage" class="f-rouge">
@@ -55,8 +60,8 @@
                 <p class="bulle-type">Quel type de formation recherches-tu?</p>
                 </section>
                 <section class="option-f">
-                    <a href="#" class="initial">Inital</a>
-                    <a href="#" class="alternance">Alternance</a>
+                    <a href="#specialite" class="initial" id="initiale">Initiale</a>
+                    <a href="#specialite" class="alternance" id="alternance">Alternance</a>
                 </section>
 
                 <img src="./assets/img/persos-histoire/perso-flowwi-2.png" class="boy-v" alt="">
@@ -72,19 +77,23 @@
                 <section class="domaine">
                     <section>
                         <img src="./assets/img/icones-spe/sciences-icone.png" alt="">
-                        <a href="#" class="sciences">Sciences</a>
+                        <a class="sciences" id="sciences">Sciences</a>
                     </section>
                     <section class="spe-down">
                         <img src="./assets/img/icones-spe/communication-marketing-icone.png" alt="">
-                        <a href="#" class="com">Communication <br> & Marketing</a>
+                        <a class="com" id="commarketing">Communication <br> & Marketing</a>
+                    </section>
+                    <section class="">
+                        <img src="./assets/img/icones-spe/informatique-icone.png" alt="">
+                        <a class="informatique" id="informatique">Informatique</a>
                     </section>
                     <section class="spe-down">
-                        <img src="./assets/img/icones-spe/informatique-icone.png" alt="">
-                        <a href="?informatique#diplome" class="informatique">Informatique</a>
+                        <img src="./assets/img/icones-spe/esthetique-icone.png" alt="">
+                        <a class="esthetique" id="esthetique">Esthétique</a>
                     </section>
                     <section>
-                        <img src="./assets/img/icones-spe/esthetique-video-icone.png" alt="">
-                        <a href="#" class="esthetique">Esthétique <br> & Vidéo </a>
+                        <img src="./assets/img/icones-spe/video-son-icone.png" alt="">
+                        <a class="video" id="videoson">Vidéo & Son </a>
                     </section>
                 </section>
 
@@ -95,28 +104,20 @@
 
 
     <?php
-    if (isset($_GET['sciences3'])):
-        include('views/sciences3.php');
-    elseif (isset($_GET['sciences5'])):
-        include('views/sicences5.php');
+    if (isset($_GET['sciencesbac3']) || isset($_GET['sciencesbac5'])):
+        include('views/sciences.php');
 
-    elseif (isset($_GET['informatique3']) || isset($_GET['informatique5'])):
+    elseif (isset($_GET['informatiquebac3']) || isset($_GET['informatiquebac5'])):
         include('views/informatique.php');
 
-    elseif (isset($_GET['communication-marketing3'])):
-        include('views/communication-marketing3.php');
-    elseif (isset($_GET['communication-marketing5'])):
-        include('views/communication-marketing5.php');
+    elseif (isset($_GET['commarketingbac3']) || isset($_GET['commarketingbac5'])):
+        include('views/communication-marketing.php');
         
-    elseif (isset($_GET['esthetique3'])):
-        include('views/esthetique3.php');
-    elseif (isset($_GET['esthetique5'])):
-        include('views/esthetique5.php');
+    elseif (isset($_GET['esthetiquebac3']) || isset($_GET['esthetiquebac5'])):
+        include('views/esthetique.php');
 
-    elseif (isset($_GET['video3'])):
-        include('views/video3.php');
-    elseif (isset($_GET['video5'])):
-        include('views/video5.php');
+    elseif (isset($_GET['videosonbac3']) || isset($_GET['videosonbac5'])):
+        include('views/video.php');
 
     endif;
     ?>
