@@ -1,12 +1,12 @@
 body{
     background-color: #A9CBD1;
     margin : 0;
+    font-family: 'DIN', sans-serif;
 }
 
 a{
     text-decoration : none;
     color : black;
-    font-family: DIN;
     font-size : 1rem;
     font-weight: bold;
     padding : 10px;
@@ -17,9 +17,8 @@ a{
 }
 
 h1{
-    font-family: 'Passion One', cursive;
     color : #457D88;
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: rgba(255, 255,255, 0.8) 10px -10px 6px;
     margin : 0 15%;
     position : fixed;
@@ -77,7 +76,7 @@ section h2{
 }
 
 .vagues-droite{
-    rotate: 0.5turn;
+    transform: rotate(0.5turn);
     position: fixed;
     right: 0;
     top: 0;

@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowwi</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/fluide.css">
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./assets/js/script.js"></script>
-
-
-</head>
+<?php include('./views/head.php'); ?>
 
 <body>
     <div class="accueil" id="accueil">
@@ -23,6 +9,7 @@
             <a href="./voyage-rapide/">Voyage rapide</a>
             <a href="./a-propos/">À propos</a>
         </header>
+        <h1>Bienvenue</h1>
         <img src="./assets/img/persos-histoire/perso-flowwi-8.png" alt="personnage" class="f-orange">
         <img src="./assets/img/persos-histoire/perso-flowwi-2.png" alt="personnage" class="g-violet">
         <a href="#niveau-bac" class="start" id="start">démarrer</a>
@@ -104,19 +91,19 @@
 
 
     <?php
-    if (isset($_GET['sciencesbac3']) || isset($_GET['sciencesbac5'])):
+    if (isset($_GET['sciences'])):
         include('views/sciences.php');
 
-    elseif (isset($_GET['informatiquebac3']) || isset($_GET['informatiquebac5'])):
+    elseif (isset($_GET['informatique'])):
         include('views/informatique.php');
 
-    elseif (isset($_GET['commarketingbac3']) || isset($_GET['commarketingbac5'])):
+    elseif (isset($_GET['commarketing'])):
         include('views/communication-marketing.php');
         
-    elseif (isset($_GET['esthetiquebac3']) || isset($_GET['esthetiquebac5'])):
+    elseif (isset($_GET['esthetique'])):
         include('views/esthetique.php');
 
-    elseif (isset($_GET['videosonbac3']) || isset($_GET['videosonbac5'])):
+    elseif (isset($_GET['videoson'])):
         include('views/video.php');
 
     endif;

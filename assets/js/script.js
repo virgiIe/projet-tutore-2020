@@ -1,25 +1,25 @@
 "use strict";
 
-var niveau = "", type = "", domaine = "", forme = "";
-// console.log(niveau);
+// déclaration de variables ici pour éviter de répéter des 'var ...' dans le .ready
+var forme = "", chemin = "";
 
 $(document).ready(function() {
 
     // Question sur le niveau
+        // on stocke les résultats dans le cache
+        // pour les conserver comme la page recharge
 
     $("#bac3").on("click", function () {
-        niveau = "bac3";
+        sessionStorage.setItem('niveau', 'bac3');
         // console.log(niveau);
     });
     
     $("#bac5").on("click", function () {
-        niveau = "bac5";
+        sessionStorage.setItem('niveau', 'bac5');
         //console.log(niveau)
     });
 
     // Question sur le type
-        // on stocke l'action dans le cache car la page refesh
-        // au moment du choix de la spécialité
 
     $("#initiale").on("click", function () {
         sessionStorage.setItem('type', 'initiale');
@@ -36,35 +36,85 @@ $(document).ready(function() {
     // Question sur la spécialité
 
     $("#sciences").on("click", function () {
-        domaine = "sciences";
+        sessionStorage.setItem('domaine', 'sciences');
         diplomeRedirection();
     });
 
     $("#commarketing").on("click", function () {
-        domaine = "commarketing";
+        sessionStorage.setItem('domaine', 'commarketing');
         diplomeRedirection();
     });
 
     $("#informatique").on("click", function () {
-        domaine = "informatique";
+        sessionStorage.setItem('domaine', 'informatique');
         diplomeRedirection();
     });
 
     $("#esthetique").on("click", function () {
-        domaine = "esthetique";
+        sessionStorage.setItem('domaine', 'esthetique');
         diplomeRedirection();
     });
 
     $("#videoson").on("click", function () {
-        domaine = "videoson";
+        sessionStorage.setItem('domaine', 'videoson');
         diplomeRedirection();
     });
 
 
+    
+    
+    // Listes de diplomes en fonction des choix de l'internaute
+    
+    $("#bachelor").on("click", function () {
+        forme = "pt_FormeDeFormation.id=4";
+        listeFormation();
+    });
+
+
+    
+    // Redirection vers la page #specialite
+
+    $("#retourSpecialite").on("click", function () {
+        diplomeRedirection();
+    });
+
+    
+    
+    
+    
+    
+    // Redirection vers l'index #diplome
+    function diplomeRedirection () {
+        // on vérifie si on se trouve dans la racine du projet ou dans /liste
+        if (document.location.href.includes("liste") == false ) {
+            chemin = "?";
+        } else {
+            chemin = "../?";
+        }
+        window.location.replace(chemin+sessionStorage.getItem('domaine')+"&"+sessionStorage.getItem('niveau')+"#diplome");
+    }
 
 
 
 
+
+    // EN COURS --> A voir ce qui est nécessaire pour la requete SQL liste
+    function listeFormation() {
+        window.location.replace(
+            "./liste/"+"?"+sessionStorage.getItem('domaine')+"&"+sessionStorage.getItem('type')+"&"+forme
+        );
+    }
+
+
+
+
+
+
+
+
+
+    // Bienvenue en cercle
+    $('h1').arctext({radius: 300});
 
 
     // Animation du background
@@ -82,65 +132,51 @@ $(document).ready(function() {
         if ($(window).scrollTop() >= ($("#specialite").offset().top - ($(window).height() / 2))) {
             $("body").css("background-color", "var(--eau-specialite)");
         }
+        // vérifie si .diplome existe
+        if(document.getElementById("diplome") !== null) {
+            if ($(window).scrollTop() >= ($("#diplome").offset().top - ($(window).height() / 2))) {
+                if ( $("#diplome").attr("class").includes("sciences") == true ) {
+                $("body").css("background-color", "var(--eau-sciences)");
+                }; 
+                if ( $("#diplome").attr("class").includes("com") == true ) {
+                    $("body").css("background-color", "var(--eau-commarketing)");
+                };
+                if ( $("#diplome").attr("class").includes("info") == true ) {
+                    $("body").css("background-color", "var(--eau-informatique)");
+                };
+                if ( $("#diplome").attr("class").includes("esthetique") == true ) {
+                    $("body").css("background-color", "var(--eau-esthetique)");
+                };
+                if ( $("#diplome").attr("class").includes("video") == true ) {
+                    $("body").css("background-color", "var(--eau-video)");
+                };
+            }
+        }   
+    });
 
-        if ($(window).scrollTop() >= ($("#diplome").offset().top - ($(window).height() / 2))) {
-            if ( $("#diplome").attr("class").includes("sciences") == true ) {
+
+    // Ajout le background à .diplome s'il existe
+
+    if(document.getElementById("diplome") !== null) {
+        if ( $("#diplome").attr("class").includes("sciences") == true ) {
             $("body").css("background-color", "var(--eau-sciences)");
-            }; 
-            if ( $("#diplome").attr("class").includes("com") == true ) {
-                $("body").css("background-color", "var(--eau-commarketing)");
-            };
-            if ( $("#diplome").attr("class").includes("info") == true ) {
-                $("body").css("background-color", "var(--eau-informatique)");
-            };
-            if ( $("#diplome").attr("class").includes("esthetique") == true ) {
-                $("body").css("background-color", "var(--eau-esthetique)");
-            };
-            if ( $("#diplome").attr("class").includes("video") == true ) {
-                $("body").css("background-color", "var(--eau-video)");
-            };
-        }
-
-    });
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    // Redirection vers la page Spécialité + Niveau
-
-    function diplomeRedirection () {
-        window.location.replace("?"+domaine+niveau+"#diplome");
+        }; 
+        if ( $("#diplome").attr("class").includes("com") == true ) {
+            $("body").css("background-color", "var(--eau-commarketing)");
+        };
+        if ( $("#diplome").attr("class").includes("info") == true ) {
+            $("body").css("background-color", "var(--eau-informatique)");
+        };
+        if ( $("#diplome").attr("class").includes("esthetique") == true ) {
+            $("body").css("background-color", "var(--eau-esthetique)");
+        };
+        if ( $("#diplome").attr("class").includes("video") == true ) {
+            $("body").css("background-color", "var(--eau-video)");
+        };
     }
 
 
 
-    // Ajout le background à .diplome quand la page est rechargé avec diplomeRedirection
-
-    if ( $("#diplome").attr("class").includes("sciences") == true ) {
-        $("body").css("background-color", "var(--eau-sciences)");
-    }; 
-    if ( $("#diplome").attr("class").includes("com") == true ) {
-        $("body").css("background-color", "var(--eau-commarketing)");
-    };
-    if ( $("#diplome").attr("class").includes("info") == true ) {
-        $("body").css("background-color", "var(--eau-informatique)");
-    };
-    if ( $("#diplome").attr("class").includes("esthetique") == true ) {
-        $("body").css("background-color", "var(--eau-esthetique)");
-    };
-    if ( $("#diplome").attr("class").includes("video") == true ) {
-        $("body").css("background-color", "var(--eau-video)");
-    };
 
 
 
@@ -148,26 +184,6 @@ $(document).ready(function() {
 
 
 
-    // Listes de diplomes en fonction des choix de l'internaute
-
-    $("#bachelor").on("click", function () {
-        forme = "pt_FormeDeFormation.id=4";
-        listeFormation();
-    });
-
-
-
-
-
-
-
-    // EN COURS
-    function listeFormation() {
-        type = sessionStorage.getItem('type');
-        console.log(type);
-        console.log(forme);
-        window.location.replace("./liste/"+"?"+domaine+"&"+type+"&"+forme);
-    }
 
 })
 

@@ -90,6 +90,13 @@ header a {
     
 }
 
+h1 {
+    position: relative;
+    top: 10%;
+    text-align: center;
+    font-size: 3.2rem;
+}
+
 .start {
     text-decoration: none;
     color: #638389;
@@ -339,7 +346,7 @@ header a {
 
 .spe-down {
     position: relative;
-    bottom: -60%;
+    bottom: -40%;
 }
 
 .f-bleu {

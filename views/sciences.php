@@ -5,7 +5,7 @@
                 <h2 class="diplome-titre">Sciences</h2>
         </div>
 
-        <?php if (isset($_GET['sciencesbac3'])): ?>
+        <?php if (isset($_GET['bac3'])): ?>
                 <h3 class="bac-niveau diplome-sciences">BAC +3</h3>
             <div class="suite">
                 <a class="btn-diplome sciences-1" id="bachelor">Bachelors privés</a>
@@ -13,7 +13,7 @@
             </div>
         <?php endif; ?>
 
-        <?php if (isset($_GET['sciencesbac5'])): ?>
+        <?php if (isset($_GET['bac5'])): ?>
                 <h3 class="bac-niveau diplome-sciences">BAC +5</h3>
             <div class="suite">
                 <a href="" class="btn-diplome sciences-1">Mastères privés</a>
