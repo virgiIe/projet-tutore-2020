@@ -9,7 +9,7 @@
             <a href="./voyage-rapide/">Voyage rapide</a>
             <a href="./a-propos/">À propos</a>
         </header>
-        <h1>Bienvenue</h1>
+        <h1 class="bienvenue">Bienvenue</h1>
         <img src="./assets/img/persos-histoire/perso-flowwi-8.png" alt="personnage" class="f-orange">
         <img src="./assets/img/persos-histoire/perso-flowwi-2.png" alt="personnage" class="g-violet">
         <a href="#niveau-bac" class="start" id="start">démarrer</a>

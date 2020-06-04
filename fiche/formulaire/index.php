@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <?php if (isset($_GET['form'])): ?>
+    <?php if (isset($_GET['send'])): ?>
         <div class="pageformulaire">
             <img class="lettre" src="../../assets/img/icones-fiche/mail.png" alt="">
             
@@ -38,7 +38,7 @@
     <?php endif; ?>
 
 
-    <?php if (isset($_GET['?success=true'])): ?>
+    <?php if (isset($_GET['success'])): ?>
 
     <div class="pagefin">
         <img class="lettre2" src="../../assets/img/icones-fiche/mail.png" alt="">

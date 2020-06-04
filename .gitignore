@@ -2,3 +2,4 @@
 .vscode
 
 /lib/secrets.php
+/lib/connexion_base.php

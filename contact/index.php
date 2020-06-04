@@ -9,7 +9,7 @@
 <body>
     <div class="pageformulaire">
         <form action="controllers/contact_form.php" method="POST" class="formulaire">
-            <a href=""><img class="croix" src="../assets/img/icones-fiche/croix.png" alt=""></a>
+            <a href="../a-propos/"><img class="croix" src="../assets/img/icones-fiche/croix.png" alt=""></a>
             <h1 class="obtenir">Formulaire de contact</h1>
 
             <div class="name">

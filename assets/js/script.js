@@ -114,7 +114,7 @@ $(document).ready(function() {
 
 
     // Bienvenue en cercle
-    $('h1').arctext({radius: 300});
+    $('.bienvenue').arctext({radius: 300});
 
 
     // Animation du background

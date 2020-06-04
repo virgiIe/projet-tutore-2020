@@ -92,9 +92,14 @@ header a {
 
 h1 {
     position: relative;
-    top: 10%;
     text-align: center;
     font-size: 3.2rem;
+}
+
+
+
+.bienvenue {
+    top: 10%;
 }
 
 .start {
@@ -620,16 +625,15 @@ a {
 }
 
 .titreresultat {
-    font-size: 3.75rem;
-    padding-left: 10%;
-    margin-top: 2%;
+    font-size: 3rem;
+    /* padding-left: 10%;
+    margin-top: 2%; */
 }
 
 .ecole {
     display: flex;
     justify-content: flex-end;
     margin-right: 20%;
-    margin-top: -2%;
     font-size: 2.5rem;
     color: white;
 
@@ -654,7 +658,7 @@ a {
     background-color: rgb(255, 255, 255);
     border-radius: 40px;
     width: 100%;
-    padding: 10%;
+    padding: 5%;
     font-size: 1.3rem;
     height: 85%;
     /* margin-left: 5%; */
@@ -689,11 +693,8 @@ a {
 
 }
 
-.type2 {
+.d-bleu {
     color: #638389;
-    padding-left: 2%;
-  /*   border : solid red 2px; */
-    width : 60%;
 }
 
 .specialite-r {
@@ -708,12 +709,6 @@ a {
     color: black;
 }
 
-.specialite2 {
-    color: #638389;
-    padding-left: 5%;
-   /*  border : solid green 2px; */
-    width : 75%;
-}
 
 .matieres {
     color: black;
@@ -722,8 +717,8 @@ a {
 .listematieres {
     color: #638389;
     display: flex;
-    font-size: 1.25rem;
-    line-height: 1.875rem;
+    line-height: 1.4em;
+    font-size: 1rem;
    /*  border : solid hotpink 2px; */
     height: 35%;
     width: 100%;
@@ -791,8 +786,8 @@ a {
 }
 
 .debouche {
-    line-height: 3rem;
-    font-size: 1.25rem;
+    line-height: 1.4em;
+    font-size: 1rem;
     padding: 0 20%;
     /* border : solid turquoise 2px; */
 }
