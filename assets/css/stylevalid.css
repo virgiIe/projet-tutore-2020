@@ -1,0 +1,96 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 0;
+}
+
+.pagefin {
+    font-family: 'DIN', sans-serif;
+    background-color: #FFE695;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lettre2 {
+    width: 10%;
+    position: absolute;
+    top: 17%;
+}
+
+.blockbleu {
+    background-color: #A9CBD1;
+    width: 30%;
+    min-height: 50%;
+    text-align: center;
+    border-radius: 30px;
+    padding-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.msg {
+    padding: 0 3%;
+    padding-top: 14%;
+    width : 85%;
+}
+
+.ret {
+    height: 30%;
+    width: 30%;
+    padding-top: 7%;
+}
+
+.btn2 {
+    background-color: #000000;
+    text-align: center;
+    padding: 10% 30%;
+    margin: auto;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    display: flex;
+    margin-left: 30%;
+    flex-direction: column;
+    margin-top: 15%;
+    bottom : 0%;
+    left : 40%;
+}
+
+.bullfin {
+    background-color: rgb(255, 255, 255);
+    padding: 10% 1%;
+    text-decoration: none;
+    font-size: 1.25rem;
+    height: 10%;
+    width: 80%;
+    text-align: center;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bonhomme2 {
+    width: 80%;
+}
