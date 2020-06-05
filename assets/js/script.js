@@ -1,7 +1,7 @@
 "use strict";
 
 // déclaration de variables ici pour éviter de répéter des 'var ...' dans le .ready
-var forme = "", chemin = "";
+var chemin = "";
 
 $(document).ready(function() {
 
@@ -10,69 +10,56 @@ $(document).ready(function() {
         // pour les conserver comme la page recharge
 
     $("#bac3").on("click", function () {
-        sessionStorage.setItem('niveau', 'bac3');
+        sessionStorage.setItem('niveau', '3');
         // console.log(niveau);
     });
     
     $("#bac5").on("click", function () {
-        sessionStorage.setItem('niveau', 'bac5');
+        sessionStorage.setItem('niveau', '5');
         //console.log(niveau)
     });
 
     // Question sur le type
 
     $("#initiale").on("click", function () {
-        sessionStorage.setItem('type', 'initiale');
-        // type = sessionStorage.getItem('type');
-        // console.log(type);
+        sessionStorage.setItem('id_typeFormation', '3');
     });
     
     $("#alternance").on("click", function () {
-        sessionStorage.setItem('type', 'alternance');
-        // type = sessionStorage.getItem('type');
-        // console.log(type);
+        sessionStorage.setItem('id_typeFormation', '2');
     });
 
     // Question sur la spécialité
 
     $("#sciences").on("click", function () {
-        sessionStorage.setItem('domaine', 'sciences');
+        sessionStorage.setItem('id_specialite', '4');
         diplomeRedirection();
     });
 
     $("#commarketing").on("click", function () {
-        sessionStorage.setItem('domaine', 'commarketing');
+        sessionStorage.setItem('id_specialite', '1');
         diplomeRedirection();
     });
 
     $("#informatique").on("click", function () {
-        sessionStorage.setItem('domaine', 'informatique');
+        sessionStorage.setItem('id_specialite', '3');
         diplomeRedirection();
     });
 
     $("#esthetique").on("click", function () {
-        sessionStorage.setItem('domaine', 'esthetique');
+        sessionStorage.setItem('id_specialite', '2');
         diplomeRedirection();
     });
 
     $("#videoson").on("click", function () {
-        sessionStorage.setItem('domaine', 'videoson');
+        sessionStorage.setItem('id_specialite', '5');
         diplomeRedirection();
     });
 
 
-    
-    
-    // Listes de diplomes en fonction des choix de l'internaute
-    
-    $("#bachelor").on("click", function () {
-        forme = "pt_FormeDeFormation.id=4";
-        listeFormation();
-    });
-
 
     
-    // Redirection vers la page #specialite
+    // Redirection de la liste vers #diplome
 
     $("#retourSpecialite").on("click", function () {
         diplomeRedirection();
@@ -91,21 +78,29 @@ $(document).ready(function() {
         } else {
             chemin = "../?";
         }
-        window.location.replace(chemin+sessionStorage.getItem('domaine')+"&"+sessionStorage.getItem('niveau')+"#diplome");
+        window.location.replace(chemin+"niveau="+sessionStorage.getItem('niveau')+"&"+"id_specialite="+sessionStorage.getItem('id_specialite')+"#diplome");
     }
 
 
 
 
 
-    // EN COURS --> A voir ce qui est nécessaire pour la requete SQL liste
-    function listeFormation() {
+    // Ajout dans le href de la préférence du type (initiale/alternance)
+    $("a.btn-diplome").each(function() {
+        var $this = $(this);       
+        var _href = $this.attr("href"); 
+        $this.attr("href", _href + '&id_typeFormation='+sessionStorage.getItem('id_typeFormation'));
+     });
+
+
+
+
+     
+     function listeFormation() {
         window.location.replace(
             "./liste/"+"?"+sessionStorage.getItem('domaine')+"&"+sessionStorage.getItem('type')+"&"+forme
         );
-    }
-
-
+    };
 
 
 
@@ -174,8 +169,6 @@ $(document).ready(function() {
             $("body").css("background-color", "var(--eau-video)");
         };
     }
-
-
 
 
 

@@ -5,20 +5,21 @@
                 <h2 class="diplome-titre">Esthétique</h2>
         </div>
 
-        <?php if (isset($_GET['bac3'])): ?>
+        <?php if ($_GET['niveau'] == 3): ?>
                 <h3 class="bac-niveau diplome-esthetique">BAC +3</h3>
             <div class="suite">
-                <a href="" class="btn-diplome esthetique-1">Bachelors privés</a>
-                <a href="" class="btn-diplome esthetique-2">Licences professionnelles</a>
+                <a href="./liste/?id_Specialite=2&id_FormeDeFormation=5" class="btn-diplome esthetique-1">Bachelors privés</a>
+                <a href="./liste/?id_Specialite=2&id_FormeDeFormation=3" class="btn-diplome esthetique-2">DNA</a>
+                <a href="./liste/?id_Specialite=2&id_FormeDeFormation=4" class="btn-diplome esthetique-2">Licences professionnelles</a>
             </div>
         <?php endif; ?>
 
-        <?php if (isset($_GET['bac5'])): ?>
+        <?php if ($_GET['niveau'] == 5): ?>
                 <h3 class="bac-niveau diplome-esthetique">BAC +5</h3>
             <div class="suite">
-                <a href="" class="btn-diplome esthetique-1">Mastères privés</a>
-                <a href="" class="btn-diplome esthetique-2">Cycles d'ingénieurs</a>
-                <a href="" class="btn-diplome esthetique-3">Masters universitaire</a>
+                <a href="./liste/?id_Specialite=2&id_FormeDeFormation=7" class="btn-diplome esthetique-1">Mastères privés</a>
+                <a href="./liste/?id_Specialite=2&id_FormeDeFormation=2" class="btn-diplome esthetique-2">DSAA</a>
+                <a href="./liste/?id_Specialite=2&id_FormeDeFormation=1" class="btn-diplome esthetique-3">Masters universitaire</a>
             </div>
         <?php endif; ?>
         

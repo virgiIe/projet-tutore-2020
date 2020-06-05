@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowwi</title>
+    <title>Flowwi - Fiche</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/fluide.css">
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js'></script>
+    <script src='https://superal.github.io/canvas2image/canvas2image.js'></script>
     <script type="text/javascript" src="../assets/js/fiche.js"></script>
 </head>
 
@@ -33,8 +35,9 @@
         
         
     <div class="resultat" id="resultat-fiche">
-        <a href="#formations" class="backresultat">
-            < Retour en arrière</a>
+        <img src="../assets/img/flowwi/logo-flowwi.png" alt="logo" class="logo">
+        <img src="../assets/img/flowwi/flowwi.png" alt="flowwi" class="flowwi">
+        <a href="#formations" class="backresultat"><!-- < Retour en arrière --></a>
         <h1 class="titreresultat"><?php echo'<p>'.$data['nom_intitule'].'</p>'?><!--<br><span class="ecole">Hetic</span>--></h1>
                 <div class="contenu">
                     <h2 class="laformation">La formation</h2>
@@ -42,10 +45,14 @@
                         <div class="blockblanc">
                             <div class="type-r">
                                 <p class="type1"> Type de formation : <span class="d-bleu">
-                                    Initial ou alternance "JS"
-                                
-                                
-                                
+                                    <?php
+                                        if($_GET["id_typeFormation"] == 2) {
+                                            echo 'Alternance';
+                                        } 
+                                        if($_GET["id_typeFormation"] == 3) {
+                                            echo 'Initiale';
+                                        }
+                                    ?>
                                 </span></p>
                                 <!-- <p class="type2"> Initial ou alternance</p> -->
                             </div>
@@ -122,10 +129,7 @@
 
                         </form>
                     </div>
-                    <a href="./formulaire/?send" class="fiche">
-                        <img class="mail" src="../assets/img/icones-fiche/mail.png" alt="">
-                        <p>Obtenir la fiche par mail</p>
-                    </a>
+                    <button type="button" id="telechargement" class="btn btn-default">Take a Screenshot!</button>
                 </footer>
 
     </div>

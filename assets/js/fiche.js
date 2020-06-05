@@ -1,9 +1,10 @@
 "use strict";
 
-var deptChoix = "";
+var etabChoix = "";
 
 $(document).ready(function() {
 
+    // redirection vers l'URL de la formation
     $('#accessSite').on("click", function () {
         // on associe une variable à la valeur de l'option choisie
         etabChoix = $("#lieu").val();
@@ -21,8 +22,13 @@ $(document).ready(function() {
         };
     });
 
-
-
+    $('#telechargement').on("click", function () {
+        html2canvas(document.querySelector('.resultat'), {
+            onrendered: function(canvas) {
+              return Canvas2Image.saveAsPNG(canvas);
+            }
+        });
+    });
 
 
 })

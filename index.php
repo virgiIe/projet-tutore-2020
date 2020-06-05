@@ -6,7 +6,6 @@
                 <img src="./assets/img/flowwi/logo-flowwi.png" alt="logo" class="logo">
                 <img src="./assets/img/flowwi/flowwi.png" alt="flowwi" class="flowwi">
            <h2 class="courant">Suivez votre courant</h2>
-            <a href="./voyage-rapide/">Voyage rapide</a>
             <a href="./a-propos/">À propos</a>
         </header>
         <h1 class="bienvenue">Bienvenue</h1>
@@ -91,22 +90,21 @@
 
 
     <?php
-    if (isset($_GET['sciences'])):
-        include('views/sciences.php');
-
-    elseif (isset($_GET['informatique'])):
-        include('views/informatique.php');
-
-    elseif (isset($_GET['commarketing'])):
-        include('views/communication-marketing.php');
-        
-    elseif (isset($_GET['esthetique'])):
-        include('views/esthetique.php');
-
-    elseif (isset($_GET['videoson'])):
-        include('views/video.php');
-
-    endif;
+        if($_GET["id_specialite"] == 1) {
+            include('views/communication-marketing.php');
+        }
+        elseif($_GET["id_specialite"] == 2) {
+            include('views/esthetique.php');
+        }
+        elseif($_GET["id_specialite"] == 3) {
+            include('views/informatique.php');
+        }
+        elseif($_GET["id_specialite"] == 4) {
+            include('views/sciences.php');
+        }
+        elseif($_GET["id_specialite"] == 5) {
+            include('views/video-son.php');
+        }
     ?>
 
     </body>

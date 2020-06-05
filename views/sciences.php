@@ -5,20 +5,20 @@
                 <h2 class="diplome-titre">Sciences</h2>
         </div>
 
-        <?php if (isset($_GET['bac3'])): ?>
+        <?php if ($_GET['niveau'] == 3): ?>
                 <h3 class="bac-niveau diplome-sciences">BAC +3</h3>
             <div class="suite">
-                <a class="btn-diplome sciences-1" id="bachelor">Bachelors privés</a>
-                <a href="" class="btn-diplome sciences-2">Licences professionnelles</a>
+                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=5" class="btn-diplome sciences-1">Bachelors privés</a>
+                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=4" class="btn-diplome sciences-2">Licences professionnelles</a>
             </div>
         <?php endif; ?>
 
-        <?php if (isset($_GET['bac5'])): ?>
+        <?php if ($_GET['niveau'] == 5): ?>
                 <h3 class="bac-niveau diplome-sciences">BAC +5</h3>
             <div class="suite">
-                <a href="" class="btn-diplome sciences-1">Mastères privés</a>
-                <a href="" class="btn-diplome sciences-2">Cycles d'ingénieurs</a>
-                <a href="" class="btn-diplome sciences-3">Masters universitaire</a>
+                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=7" class="btn-diplome sciences-1">Mastères privés</a>
+                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=6" class="btn-diplome sciences-2">Cycles d'ingénieurs</a>
+                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=1" class="btn-diplome sciences-3">Masters universitaire</a>
             </div>
         <?php endif; ?>
         

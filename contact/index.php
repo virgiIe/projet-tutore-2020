@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire</title>
+    <title>Flowwi - Formulaire</title>
     <link rel="stylesheet" href="../assets/css/form-contact.css">
 </head>
 <body>
     <div class="pageformulaire">
-        <form action="controllers/contact_form.php" method="POST" class="formulaire">
+        <form action="../controllers/contact_form.php" method="POST" class="formulaire">
+            <!-- <img class="lettre" src="../assets/img/icones-fiche/mail.png" alt=""> -->
             <a href="../a-propos/"><img class="croix" src="../assets/img/icones-fiche/croix.png" alt=""></a>
             <h1 class="obtenir">Formulaire de contact</h1>
 

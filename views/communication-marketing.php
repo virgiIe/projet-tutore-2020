@@ -5,19 +5,19 @@
                 <h2 class="diplome-titre">Communication &<br>Marketing</h2>
         </div>
 
-        <?php if (isset($_GET['bac3'])): ?>
+        <?php if ($_GET['niveau'] == 3): ?>
                 <h3 class="bac-niveau diplome-com">BAC +3</h3>
             <div class="suite">
-                <a href="" class="btn-diplome com-1">Bachelors privés</a>
-                <a href="" class="btn-diplome com-2">Licences professionnelles</a>
+                <a href="./liste/?id_Specialite=1&id_FormeDeFormation=5" class="btn-diplome com-1">Bachelors privés</a>
+                <a href="./liste/?id_Specialite=1&id_FormeDeFormation=4" class="btn-diplome com-2">Licences professionnelles</a>
             </div>
         <?php endif; ?>
 
-        <?php if (isset($_GET['bac5'])): ?>
+        <?php if ($_GET['niveau'] == 5): ?>
                 <h3 class="bac-niveau diplome-com">BAC +5</h3>
             <div class="suite">
-                <a href="" class="btn-diplome com-1">Mastères privés</a>
-                <a href="" class="btn-diplome com-2">Masters universitaire</a>
+                <a href="./liste/?id_Specialite=1&id_FormeDeFormation=7" class="btn-diplome com-1">Mastères privés</a>
+                <a href="./liste/?id_Specialite=1&id_FormeDeFormation=1" class="btn-diplome com-2">Masters universitaire</a>
             </div>
         <?php endif; ?>
         

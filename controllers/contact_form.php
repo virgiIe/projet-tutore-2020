@@ -26,7 +26,7 @@
     $db = null;
 
     // Redirect to index with a success message
-    header('Location: ../index.php?success=true');
+    header('Location: ../contact/index.php?success=true');
   } else {
     http_response_code(500);
   }
