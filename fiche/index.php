@@ -124,7 +124,7 @@
 
                             </select>
 
-                            <button id="accessSite" type="button">Accéder au site</button>
+                            <button class="site" id="accessSite" type="button">Accéder au site</button>
 
 
                         </form>

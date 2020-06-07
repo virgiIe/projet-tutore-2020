@@ -52,7 +52,7 @@
         </h2>
 
         <div class="liste">
-            <ul>
+            <ul class="ul-f">
             <?php
 
                 $sql = "SELECT pt_Intitule.id, pt_Intitule.nom FROM pt_Intitule, pt_FormeDeFormation, pt_Specialite, pt_TabIntFormeF, pt_TabIntSpe WHERE pt_TabIntFormeF.id_formeFormation = pt_FormeDeFormation.id AND pt_TabIntFormeF.id_intitule = pt_Intitule.id AND pt_TabIntSpe.id_specialite = pt_Specialite.id AND pt_TabIntSpe.id_intitule = pt_Intitule.id AND pt_FormeDeFormation.id = :id_FormeDeFormation AND pt_Specialite.id = :id_Specialite";
@@ -68,7 +68,7 @@
                     $req -> execute($attributes);
 
                     while($data = $req -> fetch()){
-                        echo '<li><a target="_blank" href="../fiche/?id_intitule='.$data['id'].'&id_typeFormation='.$test.'">'.$data['nom'].'</a></li>';
+                        echo '<li class="li-f"><a target="_blank" href="../fiche/?id_intitule='.$data['id'].'&id_typeFormation='.$test.'">'.$data['nom'].'</a></li>';
                     }
 
                     $req = null;
