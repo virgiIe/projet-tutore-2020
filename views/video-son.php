@@ -9,7 +9,6 @@
             <h3 class="bac-niveau diplome-video">BAC +3</h3>
             <div class="suite">
                 <a href="./liste/?id_Specialite=5&id_FormeDeFormation=5" class="btn-diplome video-1">Bachelors privés</a>
-                <a href="./liste/?id_Specialite=5&id_FormeDeFormation=4" class="btn-diplome video-2">Licences professionnelles</a>
             </div>
         <?php endif; ?>
 
@@ -17,9 +16,7 @@
         <?php if ($_GET['niveau'] == 5): ?>
                 <h3 class="bac-niveau diplome-video">BAC +5</h3>
             <div class="suite">
-                <a href="./liste/?id_Specialite=5&id_FormeDeFormation=7" class="btn-diplome video-1">Mastères privés</a>
-                <a href="./liste/?id_Specialite=5&id_FormeDeFormation=6" class="btn-diplome video-2">Cycles d'ingénieurs</a>
-                <a href="./liste/?id_Specialite=5&id_FormeDeFormation=1" class="btn-diplome video-3">Masters universitaire</a>
+                <a href="./liste/?id_Specialite=5&id_FormeDeFormation=1" class="btn-diplome video-1">Masters universitaire</a>
             </div>
         <?php endif; ?>
         

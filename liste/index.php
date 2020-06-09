@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowwi - Liste</title>
-    <link rel="icon" type="image/png" href="../assets/img/flowwi/logo-flowwi.png" />
+    <link rel="icon" type="image/png" href="../assets/img/flowwi/icon-flowwi.png" />
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/fluide.css">
 
@@ -23,8 +23,7 @@
 
 
     <div class="formation" id="formations">
-        <a id="retourSpecialite" class="backformation">
-            < Retour à l'accueil</a> <br>
+        <a id="retourSpecialite" class="backformation"> < Retour en arrière</a> <br>
         <h2 class="titreform">
         <?php
             if($_GET["id_FormeDeFormation"] == 1) {
@@ -42,10 +41,10 @@
             elseif($_GET["id_FormeDeFormation"] == 5) {
                 echo'Bachelors';
             }
-            elseif($_GET["id_FormeDeFormation"] == 5) {
+            elseif($_GET["id_FormeDeFormation"] == 6) {
                 echo"Cycles d'ingénieurs";
             }
-            elseif($_GET["id_FormeDeFormation"] == 5) {
+            elseif($_GET["id_FormeDeFormation"] == 7) {
                 echo'Mastères';
             }
         ?>

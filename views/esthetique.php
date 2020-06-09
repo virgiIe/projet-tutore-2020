@@ -10,7 +10,6 @@
             <div class="suite">
                 <a href="./liste/?id_Specialite=2&id_FormeDeFormation=5" class="btn-diplome esthetique-1">Bachelors privés</a>
                 <a href="./liste/?id_Specialite=2&id_FormeDeFormation=3" class="btn-diplome esthetique-2">DNA</a>
-                <a href="./liste/?id_Specialite=2&id_FormeDeFormation=4" class="btn-diplome esthetique-2">Licences professionnelles</a>
             </div>
         <?php endif; ?>
 

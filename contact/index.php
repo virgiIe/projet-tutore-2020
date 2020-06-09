@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowwi - Formulaire</title>
+    <title>Contact - Flowwi</title>
+    <link rel="icon" type="image/png" href="../assets/img/flowwi/icon-flowwi.png" />
     <link rel="stylesheet" href="../assets/css/form-contact.css">
 </head>
 <body>
@@ -35,8 +36,8 @@
 
             <!-- Message de success -->
             <?php if (isset($_GET['success'])): ?>
-            <div class="" role="alert">
-                Message bien envoyé!
+            <div class="success" role="alert">
+                <p>Message bien envoyé !</p>
             </div>
             <?php endif; ?>
             

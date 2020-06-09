@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowwi - Fiche</title>
+    <link rel="icon" type="image/png" href="../assets/img/flowwi/icon-flowwi.png" />
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/fluide.css">
 
@@ -35,10 +36,12 @@
         
         
     <div class="resultat" id="resultat-fiche">
+    <a href="../" class="backresultat">   
         <img src="../assets/img/flowwi/logo-flowwi.png" alt="logo" class="logo">
         <img src="../assets/img/flowwi/flowwi.png" alt="flowwi" class="flowwi">
-        <a href="#formations" class="backresultat"><!-- < Retour en arrière --></a>
-        <h1 class="titreresultat"><?php echo'<p>'.$data['nom_intitule'].'</p>'?><!--<br><span class="ecole">Hetic</span>--></h1>
+    </a>
+    <button type="button" id="telechargement" class="btn-screen">Faire une capture d'écran !</button>
+        <?php echo'<h1 class="titreresultat">'.$data['nom_intitule'].'</h1>' ?>
                 <div class="contenu">
                     <h2 class="laformation">La formation</h2>
                     <div class="noflex">
@@ -100,36 +103,28 @@
 
 ?>
 
-                            <select name="lieu" id="lieu">
+<select class="lieu" id="lieu"><?php
+    $sql2="SELECT pt_TypeDeFormation.id AS id_Type, pt_Intitule.id AS id_Intitule, pt_Etablissement.*, pt_Diplome.url_formation FROM pt_Etablissement, pt_Diplome, pt_TabDipIntitule, pt_TabEtabDiplome, pt_TypeDeFormation, pt_Intitule WHERE pt_TabDipIntitule.id_intitule=pt_Intitule.id AND pt_TabDipIntitule.id_diplome=pt_Diplome.id AND pt_TabEtabDiplome.id_diplome=pt_Diplome.id AND pt_TabEtabDiplome.id_etablissement=pt_Etablissement.id AND pt_Diplome.id_typeFormation=pt_TypeDeFormation.id AND pt_Intitule.id=:id_intitule AND ( pt_Diplome.id_typeFormation=:id_typeFormation OR pt_Diplome.id_typeFormation=1) ORDER BY ville ASC";
+    
+    $attributes2=array(
+        'id_intitule'=> $_GET['id_intitule'],
+        'id_typeFormation'=> $_GET['id_typeFormation'],
+    );
+    
+    $req2=$link -> prepare($sql2);
+    $req2 -> execute($attributes2);
+    
+    while($data2=$req2 -> fetch()){
+        echo '<option id="choixEcole" value="'.$data2['url_formation'].'">'.$data2['nom'].', '.$data2['code_postal'].' '.$data2['ville'].'</option>';
+    }$req2=null;
+    
+?></select>
 
-<?php
-
-    $sql2 = "SELECT pt_TypeDeFormation.id AS id_Type, pt_Intitule.id AS id_Intitule, pt_Etablissement.*, pt_Diplome.url_formation FROM pt_Etablissement, pt_Diplome, pt_TabDipIntitule, pt_TabEtabDiplome, pt_TypeDeFormation, pt_Intitule WHERE pt_TabDipIntitule.id_intitule = pt_Intitule.id AND pt_TabDipIntitule.id_diplome = pt_Diplome.id AND pt_TabEtabDiplome.id_diplome = pt_Diplome.id AND pt_TabEtabDiplome.id_etablissement = pt_Etablissement.id AND pt_Diplome.id_typeFormation = pt_TypeDeFormation.id AND pt_Intitule.id = :id_intitule AND ( pt_Diplome.id_typeFormation = :id_typeFormation OR pt_Diplome.id_typeFormation = 1) ORDER BY ville ASC";
-
-        $attributes2 = array(
-            'id_intitule' => $_GET['id_intitule'],
-            'id_typeFormation' => $_GET['id_typeFormation'],
-        );
-
-        $req2 = $link -> prepare($sql2);
-        $req2 -> execute($attributes2);
-
-        while($data2 = $req2 -> fetch()){
-            echo '<option id="choixEcole" value="'.$data2['url_formation'].'">'.$data2['nom'].', '.$data2['code_postal'].' '.$data2['ville'].'</option>';
-        }
-
-        $req2 = null;
-
-?>
-
-                            </select>
-
-                            <button class="site" id="accessSite" type="button">Accéder au site</button>
+                            <button class="btn-site" id="accessSite" type="button">Accéder au site</button>
 
 
                         </form>
                     </div>
-                    <button type="button" id="telechargement" class="btn btn-default">Take a Screenshot!</button>
                 </footer>
 
     </div>

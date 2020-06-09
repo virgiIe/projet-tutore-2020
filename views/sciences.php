@@ -8,8 +8,7 @@
         <?php if ($_GET['niveau'] == 3): ?>
                 <h3 class="bac-niveau diplome-sciences">BAC +3</h3>
             <div class="suite">
-                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=5" class="btn-diplome sciences-1">Bachelors privés</a>
-                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=4" class="btn-diplome sciences-2">Licences professionnelles</a>
+                <a href="./liste/?id_Specialite=4&id_FormeDeFormation=4" class="btn-diplome sciences-1">Licences professionnelles</a>
             </div>
         <?php endif; ?>
 

@@ -1,11 +1,26 @@
-<?php include('./views/head.php'); ?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowwi</title>
+    <link rel="icon" type="image/png" href="./assets/img/flowwi/icon-flowwi.png" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/fluide.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/js/jquery.arctext.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+    <script type="text/javascript" src="./assets/js/animations.js"></script>
+</head>
 
 <body>
     <div class="accueil" id="accueil">
         <header>
                 <img src="./assets/img/flowwi/logo-flowwi.png" alt="logo" class="logo">
                 <img src="./assets/img/flowwi/flowwi.png" alt="flowwi" class="flowwi">
-           <h2 class="courant">Suivez votre courant</h2>
+           <h2 class="courant">Suis ton courant</h2>
             <a href="./a-propos/">À propos</a>
         </header>
         <h1 class="bienvenue">Bienvenue</h1>
@@ -18,7 +33,7 @@
             <p class="txt intro">Bienvenue sur Flowwi ! Besoin d’aide pour trouver ta voie après ton DUT MMI ? Nous sommes là pour t’aider ! Fais tes choix en fonction de tes préférences et n’oublies pas de suivre ton courant !
             </p>
 
-            <p class="txt intro2">Clique sur "démarrer" pour commencer l’aventure et trouver ta future formation !</p>
+            <p class="txt intro2">Clique sur <b>démarrer</b> pour commencer l’aventure et trouver ta future formation !</p>
     
     </div>
 
@@ -90,20 +105,22 @@
 
 
     <?php
-        if($_GET["id_specialite"] == 1) {
-            include('views/communication-marketing.php');
-        }
-        elseif($_GET["id_specialite"] == 2) {
-            include('views/esthetique.php');
-        }
-        elseif($_GET["id_specialite"] == 3) {
-            include('views/informatique.php');
-        }
-        elseif($_GET["id_specialite"] == 4) {
-            include('views/sciences.php');
-        }
-        elseif($_GET["id_specialite"] == 5) {
-            include('views/video-son.php');
+        if (isset($_GET['id_specialite'])) {
+            if($_GET["id_specialite"] == 1) {
+                include('views/communication-marketing.php');
+            }
+            elseif($_GET["id_specialite"] == 2) {
+                include('views/esthetique.php');
+            }
+            elseif($_GET["id_specialite"] == 3) {
+                include('views/informatique.php');
+            }
+            elseif($_GET["id_specialite"] == 4) {
+                include('views/sciences.php');
+            }
+            elseif($_GET["id_specialite"] == 5) {
+                include('views/video-son.php');
+            }
         }
     ?>
 

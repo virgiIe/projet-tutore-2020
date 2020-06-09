@@ -87,6 +87,9 @@ p{
     height: 30px;
     padding-top: 4%;
 }
+.success {
+    padding-top: 3%;
+}
 .btn{
     background-color: #000000;
     text-align: center;
