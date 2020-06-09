@@ -756,6 +756,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+/*     border : solid firebrick 2px; */
 }
 /* Style "Et après ?" */
 .and {
@@ -897,6 +898,7 @@ form select {
     color: black;
     font-size: 1.25rem;
     text-decoration: none;
+    /* border : solid #EFDEA8 2px; */
 }
 
 /* Bulles de dialogue */
